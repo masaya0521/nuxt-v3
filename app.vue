@@ -1,5 +1,14 @@
+<script setup lang="ts">
+const { counter, inc, dec } = useSharedCounter();
+onMounted(() => {
+  console.log(counter.value);
+});
+</script>
+
 <template>
   <div>
-    <NuxtWelcome />
+    カウンター: {{ counter }}
+    <button @click="inc">+</button>
+    <button @click="dec">-</button>
   </div>
 </template>
